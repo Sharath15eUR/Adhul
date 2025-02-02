@@ -1,0 +1,37 @@
+Create 3 files in a dir1 and re-direct the output of list command with sorted by timestamp
+of the files to a file
+
+OUTPUT:
+
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/Module1$ touch items1.txt
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/Module1$ touch items2.txt
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/Module1$ touch items3.txt
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/Module1$ ls -l
+total 52
+drwxrwxr-x 3 adhul adhul  4096 Feb  2 19:51 dir1
+-rw-r--r-- 1 adhul adhul     0 Feb  2 19:45 item2.txt
+-rw-rw-r-- 1 adhul adhul     0 Feb  2 19:57 items1.txt
+-rw-rw-r-- 1 adhul adhul     0 Feb  2 19:58 items2.txt
+-rw-rw-r-- 1 adhul adhul     0 Feb  2 19:59 items3.txt
+-rwxrwxr-x 1 adhul adhul     0 Feb  2 19:40 item.txt
+-rw-rw-r-- 1 adhul adhul   592 Feb  2 19:44 q1.txt
+-rw-rw-r-- 1 adhul adhul   786 Feb  2 19:47 q2.txt
+-rw-rw-r-- 1 adhul adhul   892 Feb  2 19:56 q3.txt
+-rw-rw-r-- 1 adhul adhul 31224 Feb  2 19:53 q4.txt
+-rw-rw-r-- 1 adhul adhul    60 Feb  2 19:37 README.md
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/Module1$ ls -lt > totalitems.txt
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/Module1$ cat totalitems.txt
+total 52
+-rw-rw-r-- 1 adhul adhul     0 Feb  2 20:00 totalitems.txt
+-rw-rw-r-- 1 adhul adhul     0 Feb  2 19:59 items3.txt
+-rw-rw-r-- 1 adhul adhul     0 Feb  2 19:58 items2.txt
+-rw-rw-r-- 1 adhul adhul     0 Feb  2 19:57 items1.txt
+-rw-rw-r-- 1 adhul adhul   892 Feb  2 19:56 q3.txt
+-rw-rw-r-- 1 adhul adhul 31224 Feb  2 19:53 q4.txt
+drwxrwxr-x 3 adhul adhul  4096 Feb  2 19:51 dir1
+-rw-rw-r-- 1 adhul adhul   786 Feb  2 19:47 q2.txt
+-rw-r--r-- 1 adhul adhul     0 Feb  2 19:45 item2.txt
+-rw-rw-r-- 1 adhul adhul   592 Feb  2 19:44 q1.txt
+-rwxrwxr-x 1 adhul adhul     0 Feb  2 19:40 item.txt
+-rw-rw-r-- 1 adhul adhul    60 Feb  2 19:37 README.md
+

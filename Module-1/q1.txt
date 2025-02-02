@@ -1,0 +1,14 @@
+Create a file and add executable permission to all users (user, group and others)
+
+OUTPUT:
+
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/Module1$ touch item.txt
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/Module1$ ls -l
+total 4
+-rw-rw-r-- 1 adhul adhul  0 Feb  2 19:40 item.txt
+-rw-rw-r-- 1 adhul adhul 60 Feb  2 19:37 README.md
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/Module1$ chmod a+x item.txt
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/Module1$ ls -l
+total 4
+-rwxrwxr-x 1 adhul adhul  0 Feb  2 19:40 item.txt
+-rw-rw-r-- 1 adhul adhul 60 Feb  2 19:37 README.md

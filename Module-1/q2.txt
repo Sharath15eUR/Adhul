@@ -1,0 +1,18 @@
+Create a file and remove write permission for group user alone.
+
+OUTPUT:
+
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/Module1$ touch item2.txt
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/Module1$ ls -lh
+total 8.0K
+-rw-rw-r-- 1 adhul adhul   0 Feb  2 19:45 item2.txt
+-rwxrwxr-x 1 adhul adhul   0 Feb  2 19:40 item.txt
+-rw-rw-r-- 1 adhul adhul 592 Feb  2 19:44 q1.txt
+-rw-rw-r-- 1 adhul adhul  60 Feb  2 19:37 README.md
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/Module1$ chmod g-w item2.txt
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/Module1$ ls -l
+total 8
+-rw-r--r-- 1 adhul adhul   0 Feb  2 19:45 item2.txt
+-rwxrwxr-x 1 adhul adhul   0 Feb  2 19:40 item.txt
+-rw-rw-r-- 1 adhul adhul 592 Feb  2 19:44 q1.txt
+-rw-rw-r-- 1 adhul adhul  60 Feb  2 19:37 README.md
