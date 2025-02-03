@@ -1,0 +1,11 @@
+Use the networking tool command and print all the gateway available in a sorted manner
+
+OUTPUT:
+
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/Downloads/Adhul/Module-2$ netstat -rn
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
+0.0.0.0         192.168.31.1    0.0.0.0         UG        0 0          0 wlp2s0
+192.168.31.0    0.0.0.0         255.255.255.0   U         0 0          0 wlp2s0
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/Downloads/Adhul/Module-2$ netstat -rn | grep '^0.0.0.0' | awk '{print $2}' | sort
+192.168.31.1

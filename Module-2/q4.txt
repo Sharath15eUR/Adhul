@@ -1,0 +1,9 @@
+Write a code to identify the process with the highest memory usage and then terminate it.
+
+OUTPUT:
+
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/Downloads/Adhul/Module-2$ ps aux | awk '$4>0 {print $0}' | sort -k4,4nr | head -n1
+adhul       5032 24.3  5.1 3338028 811224 ?      Sl   10:09   8:53 /snap/firefox/4793/usr/lib/firefox/firefox -contentproc -childID 4 -isForBrowser -prefsLen 31425 -prefMapSize 252351 -jsInitLen 234852 -parentBuildID 20240819223648 -greomni /snap/firefox/4793/usr/lib/firefox/omni.ja -appomni /snap/firefox/4793/usr/lib/firefox/browser/omni.ja -appDir /snap/firefox/4793/usr/lib/firefox/browser {bfd92d33-eca3-4870-9cc1-3aa6a3417944} 4270 true tab
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/Downloads/Adhul/Module-2$ ps aux | awk '$4>0 {print $0}' | sort -k4,4nr | head -n1 | awk '{print $2}' | xargs kill -9
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/Downloads/Adhul/Module-2$ ps aux | awk '$4>0 {print $0}' | sort -k4,4nr | head -n1
+adhul       4270 15.9  3.0 11925920 481152 ?     Sl   10:09   5:57 /snap/firefox/4793/usr/lib/firefox/firefox

@@ -1,0 +1,6 @@
+ERROR: Unable to connect to the database.
+ERROR: DEBUG - Configuration settings could not be applied.
+ERROR: Failed to fetch data from API endpoint '/users'.
+ERROR: DEBUG - Query execution failed due to a syntax error.
+ERROR: Missing required parameter in the request.
+ERROR: DEBUG - Unexpected server response received.
