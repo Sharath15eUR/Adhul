@@ -1,0 +1,47 @@
+
+
+OUTPUT:
+
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/Downloads/Adhul/Module-5$ nano file_analyzer.sh
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/Downloads/Adhul/Module-5$ mkdir logs\
+> ^C
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/Downloads/Adhul/Module-5$ ls
+file_analyzer.sh  logs  q1.txt
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/Downloads/Adhul/Module-5$ cd logs
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/Downloads/Adhul/Module-5/logs$ 
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/Downloads/Adhul/Module-5/logs$ nano f1.txt
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/Downloads/Adhul/Module-5/logs$ nano f2.txt
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/Downloads/Adhul/Module-5/logs$ cd ..
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/Downloads/Adhul/Module-5$ chmod 777 file_analyzer.sh
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/Downloads/Adhul/Module-5$ ./file_analyzer.sh
+Error: Please specify either -d or -f.
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/Downloads/Adhul/Module-5$ ./file_analyzer.sh --help
+Usage: ./file_analyzer.sh [OPTIONS]
+
+Options:
+  -d <directory>   Recursively search in the specified directory.
+  -k <keyword>     Search for the specified keyword.
+  -f <file>        Search for the keyword in a specific file.
+  --help           Display this help menu.
+
+Example:
+  ./file_analyzer.sh -d logs -k error
+  ./file_analyzer.sh -f myscript.sh -k TODO
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/Downloads/Adhul/Module-5$ ^C
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/Downloads/Adhul/Module-5$ ./file_analyzer.sh -d logs -k DEBUG
+logs/f1.txt
+Match found in: logs/f1.txt
+logs/f2.txt
+Match found in: logs/f2.txt
+Script finished with exit code: 0
+
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/Downloads/Adhul/Module-5$ ./file_analyzer.sh -d "/home/adhul/Downloads/Adhul/Module-5/logs/" -k server
+/home/adhul/Downloads/Adhul/Module-5/logs//f1.txt
+Match found in: /home/adhul/Downloads/Adhul/Module-5/logs//f1.txt
+/home/adhul/Downloads/Adhul/Module-5/logs//f2.txt
+Match found in: /home/adhul/Downloads/Adhul/Module-5/logs//f2.txt
+Script finished with exit code: 0
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/Downloads/Adhul/Module-5$ ./file_analyzer.sh -f "/home/adhul/Downloads/Adhul/Module-5/logs/f1.txt" -k server
+ERROR: DEBUG - Unexpected server response received.
+Keyword found in /home/adhul/Downloads/Adhul/Module-5/logs/f1.txt
+Script finished with exit code: 0

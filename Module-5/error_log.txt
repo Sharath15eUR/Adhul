@@ -1,0 +1,5 @@
+Error: Please specify either -d or -f.
+Directory 'logs/log1.txt' not found.
+Directory 'logs/f1.txt' not found.
+Directory './logs/f1.txt' not found.
+Directory 'logs/f1.txt' not found.
