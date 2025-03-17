@@ -1,0 +1,14 @@
+2. Create a file and remove write permission for group user alone
+
+annamalai@Annamalai:~/Linux/Module_1$ 
+annamalai@Annamalai:~/Linux/Module_1$ ls
+q1.txt
+annamalai@Annamalai:~/Linux/Module_1$ touch q2.txt
+annamalai@Annamalai:~/Linux/Module_1$ ls -l
+total 4
+-rwxrwxr-x 1 annamalai annamalai 585 Jan 28 10:20 q1.txt
+-rw-rw-r-- 1 annamalai annamalai   0 Jan 28 10:21 q2.txt
+annamalai@Annamalai:~/Linux/Module_1$ chmod g-w q2.txt
+annamalai@Annamalai:~/Linux/Module_1$ ls -l q2.txt
+-rw-r--r-- 1 annamalai annamalai 0 Jan 28 10:21 q2.txt
+annamalai@Annamalai:~/Linux/Module_1$ 

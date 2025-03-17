@@ -1,0 +1,26 @@
+
+2. Replace all occurences of localhost in the config.txt file and replace it with 127.0.0.1 and update this change in the updated_config.txt 
+
+Ans : 
+annamalai@Annamalai:~/Linux/Module_2/Q2$ cat > config.txt
+# Sample Configuration
+File server = localhost
+database_host = localhost
+port = 3306
+api_url = http://localhost:8080
+log_path = /var/log/localhost
+timeout = 30
+^C
+annamalai@Annamalai:~/Linux/Module_2/Q2$ ls
+config.txt
+annamalai@Annamalai:~/Linux/Module_2/Q2$ sed 's/localhost/127.0.0.1/g' config.txt > updated_config.txt
+annamalai@Annamalai:~/Linux/Module_2/Q2$ ls
+config.txt  updated_config.txt
+annamalai@Annamalai:~/Linux/Module_2/Q2$ cat updated_config.txt 
+# Sample Configuration
+File server = 127.0.0.1
+database_host = 127.0.0.1
+port = 3306
+api_url = http://127.0.0.1:8080
+log_path = /var/log/127.0.0.1
+timeout = 30

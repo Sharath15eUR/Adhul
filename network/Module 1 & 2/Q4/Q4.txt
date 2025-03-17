@@ -1,0 +1,90 @@
+ARP:
+
+ARP is a network protocol used to map an IP address to a device’s MAC (Media Access Control) address within a local network.
+
+Usage:
+1.Helps devices communicate in a local network.
+2.Used in network troubleshooting and security monitoring.
+3.Can be exploited in ARP spoofing attacks, leading to man-in-the-middle (MITM) attacks.
+
+In terminal:
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~$ arp
+Address                  HWtype  HWaddress           Flags Mask            Iface
+10.128.128.128           ether   70:f3:5a:9c:17:68   C                     wlp2s0
+_gateway                 ether   7c:5a:1c:cf:f2:a5   C                     wlp2s0
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~$ arp -n
+Address                  HWtype  HWaddress           Flags Mask            Iface
+10.128.128.128           ether   70:f3:5a:9c:17:68   C                     wlp2s0
+10.11.128.1              ether   7c:5a:1c:cf:f2:a5   C                     wlp2s0
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~$ arp _gateway
+Address                  HWtype  HWaddress           Flags Mask            Iface
+_gateway                 ether   7c:5a:1c:cf:f2:a5   C                     wlp2s0
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~$ ip neigh show
+10.11.128.1 dev wlp2s0 lladdr 7c:5a:1c:cf:f2:a5 REACHABLE 
+
+
+
+PING:
+
+Ping (Packet Internet Groper) is a network utility used to test the connectivity between two devices over a network. It helps determine if a remote host is reachable and measures the round-trip time (RTT) for packets.
+
+In Terminal:
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~$ ping google.com
+PING google.com (142.250.195.142) 56(84) bytes of data.
+64 bytes from maa03s40-in-f14.1e100.net (142.250.195.142): icmp_seq=1 ttl=58 time=89.9 ms
+64 bytes from maa03s40-in-f14.1e100.net (142.250.195.142): icmp_seq=2 ttl=58 time=32.3 ms
+64 bytes from maa03s40-in-f14.1e100.net (142.250.195.142): icmp_seq=3 ttl=58 time=34.1 ms
+64 bytes from maa03s40-in-f14.1e100.net (142.250.195.142): icmp_seq=4 ttl=58 time=35.5 ms
+64 bytes from maa03s40-in-f14.1e100.net (142.250.195.142): icmp_seq=5 ttl=58 time=62.3 ms
+^C
+--- google.com ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4005ms
+rtt min/avg/max/mdev = 32.312/50.818/89.897/22.429 ms
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~$ ping -c 3 google.com
+PING google.com (142.250.195.142) 56(84) bytes of data.
+64 bytes from maa03s40-in-f14.1e100.net (142.250.195.142): icmp_seq=1 ttl=58 time=15.6 ms
+64 bytes from maa03s40-in-f14.1e100.net (142.250.195.142): icmp_seq=2 ttl=58 time=16.7 ms
+64 bytes from maa03s40-in-f14.1e100.net (142.250.195.142): icmp_seq=3 ttl=58 time=31.9 ms
+
+--- google.com ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2003ms
+rtt min/avg/max/mdev = 15.562/21.403/31.912/7.446 ms
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~$ ping -s 30  -c 3 google.com
+PING google.com (142.250.195.142) 30(58) bytes of data.
+38 bytes from maa03s40-in-f14.1e100.net (142.250.195.142): icmp_seq=1 ttl=58 time=34.0 ms
+38 bytes from maa03s40-in-f14.1e100.net (142.250.195.142): icmp_seq=2 ttl=58 time=33.2 ms
+38 bytes from maa03s40-in-f14.1e100.net (142.250.195.142): icmp_seq=3 ttl=58 time=33.6 ms
+
+--- google.com ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2000ms
+rtt min/avg/max/mdev = 33.150/33.580/33.950/0.329 ms
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~$ ping -i 2 google.com
+PING google.com (142.250.195.142) 56(84) bytes of data.
+64 bytes from maa03s40-in-f14.1e100.net (142.250.195.142): icmp_seq=1 ttl=58 time=34.0 ms
+64 bytes from maa03s40-in-f14.1e100.net (142.250.195.142): icmp_seq=2 ttl=58 time=32.2 ms
+64 bytes from maa03s40-in-f14.1e100.net (142.250.195.142): icmp_seq=3 ttl=58 time=34.5 ms
+64 bytes from maa03s40-in-f14.1e100.net (142.250.195.142): icmp_seq=4 ttl=58 time=28.1 ms
+^C
+--- google.com ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 6007ms
+rtt min/avg/max/mdev = 28.140/32.199/34.461/2.487 ms
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~$ ping -q google.com
+PING google.com (142.250.195.142) 56(84) bytes of data.
+^C
+^C
+--- google.com ping statistics ---
+42 packets transmitted, 42 received, 0% packet loss, time 41043ms
+rtt min/avg/max/mdev = 13.689/38.339/154.081/24.508 ms
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~$ ping -w 5 google.com
+PING google.com (142.250.195.142) 56(84) bytes of data.
+64 bytes from maa03s40-in-f14.1e100.net (142.250.195.142): icmp_seq=1 ttl=58 time=14.0 ms
+64 bytes from maa03s40-in-f14.1e100.net (142.250.195.142): icmp_seq=2 ttl=58 time=13.5 ms
+64 bytes from maa03s40-in-f14.1e100.net (142.250.195.142): icmp_seq=3 ttl=58 time=34.0 ms
+64 bytes from maa03s40-in-f14.1e100.net (142.250.195.142): icmp_seq=4 ttl=58 time=14.1 ms
+64 bytes from maa03s40-in-f14.1e100.net (142.250.195.142): icmp_seq=5 ttl=58 time=15.9 ms
+
+--- google.com ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4004ms
+rtt min/avg/max/mdev = 13.496/18.293/34.014/7.900 ms
+
+

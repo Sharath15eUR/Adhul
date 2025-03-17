@@ -1,0 +1,62 @@
+Q10.
+ 
+     Configuring a Basic LAN Interface Using the ip Command in Linux
+     
+The ip command, included in the iproute2 package, is a powerful tool for managing network interfaces, routes, and addresses.
+
+1.To display available network interfaces, use:
+          ip link show <interface>  # Leave empty to show all interfaces
+
+2.Assign a static IP to a specific interface:
+          sudo ip addr add <IP/netmask> dev <interface>
+
+3.Verify the assigned IP address:
+          ip addr show <interface>
+
+4.Activate or deactivate an interface:
+          sudo ip link set <interface> up  # To enable  
+          sudo ip link set <interface> down  # To disable
+
+5.Configure a default gateway for an interface:
+          sudo ip route add default via <gateway_IP> dev <interface>
+
+6.View the system’s routing table:
+          ip route show
+
+7.Ping a specific interface from another interface:
+          ping <destination_IP> -I <source_interface>
+
+8.To make network changes persistent, edit the /etc/network/interfaces file using:
+          sudo nano /etc/network/interfaces
+
+    Add the following lines:
+          auto <interface>
+          iface <interface> inet static
+          address <IP>
+          netmask <subnet_mask>
+          gateway <gateway_IP>
+          dns-nameservers <DNS_IPs>
+
+9.Apply the changes by restarting the networking service:
+          sudo systemctl restart networking
+
+10.Display the ARP cache of the system:
+          ip neigh show
+
+11.Clear the ARP cache:
+          sudo ip -s -s neigh flush all
+
+12.Add an interface to a VLAN:
+          sudo ip link add link eth0 name eth0.<VLAN_ID> type vlan id <VLAN_ID>
+
+13.Delete an interface:
+          sudo ip link delete <interface>
+
+14.View VLAN configuration details:
+          sudo ip -d link show
+
+15.Create a virtual bridge (software switch):
+          sudo ip link add name br0 type bridge
+
+16.Attach an interface to the created bridge:
+          sudo ip link set <interface> master <bridge_name>

@@ -1,0 +1,27 @@
+IPERF TOOL
+
+1. It is a powerful networking tool used to test or measure the bandwidth , latency and performance of TCP, UDP (packet loss statistics) , SCTP connections between two devices. 
+
+2. It supports both IPv4 and IPv6.
+
+3. Allows setting custom bandwidth, packet size , window size etc.
+
+4. It follows client-server architecture. That is, iperf server should be running on one terminal and other terminal should initiate iperf client request with any parameters required to test.
+
+5. It requires installing "sudo apt install iperf3 -y" in ubuntu
+
+6. In server machine, "iperf3 -s" to be executed, this process makes iperf3 listen to particular port (Eg. 5201).
+
+7. In client machine, "iperf3 -c <server_ip> -t <specific timeout> -p <specific port which server is listening to> -R (in reverse mode) -P <number of parallel channels required>
+
+8. iperf3 testing can be done between two laptops , between laptop and mobile phone and within localhost too. (two machines should be connected in same network)
+
+9. In case of using mobile phone as one side, iperf3 application can be donwloaded and mode can be set. 
+
+10. In localhost, during client request, instead of server iP, 127.0.0.1 can be used. 
+
+11. After testing ,server should be stopped by using exit command, if it doesn't work, identify the process ID using ps aux | grep iperf3 , and kill that process either gracefully or forcibly.
+
+12. By default, iperf3 tests tcp connections, to make it test UDP connections, -u option can be sert in iperf3 client request.
+
+13. To check multicast, server side should bind with any valid multicast address using -B option and udp option should be set. In client side, same multicast address should be specified with udp flag enabled. 

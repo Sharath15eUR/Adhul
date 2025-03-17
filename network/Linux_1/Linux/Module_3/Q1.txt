@@ -1,0 +1,19 @@
+1 Automating File back up
+
+annamalai@Annamalai:~/Linux/Module_3$ ls
+backup_manager.sh  source
+annamalai@Annamalai:~/Linux/Module_3$ cd source
+annamalai@Annamalai:~/Linux/Module_3/source$ ls
+f1.txt  f2.txt  f3.txt
+annamalai@Annamalai:~/Linux/Module_3/source$ cd ..
+annamalai@Annamalai:~/Linux/Module_3$ ./backup_manager.sh $PWD/source $PWD /destination .txt
+Usage: ./backup_manager.sh <source_directory> <backup_directory> <file_extension>
+annamalai@Annamalai:~/Linux/Module_3$ ./backup_manager.sh $PWD/source $PWD/destination .txt
+Backup directory doesn't exist. Creating Backup directory /home/annamalai/Linux/Module_3/destination
+Backing up: f1.txt (14 bytes)
+Copied: f1.txt
+Backing up: f2.txt (22 bytes)
+Copied: f2.txt
+Backing up: f3.txt (36 bytes)
+Copied: f3.txt
+Backup completed. Report saved to /home/annamalai/Linux/Module_3/destination/backup_report.log

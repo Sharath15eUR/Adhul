@@ -1,0 +1,16 @@
+Home router's web interface is by default via default gateway. 
+
+This can be verified by using ip route command - > which shows the IP of default gateway. 
+
+TO CHECK THE LIST OF CONNECTED DEVICES : 
+
+1. MOBILE HOTSPOT : 
+
+		Settings -> Mobile Hotspot -> Connected devices list will be shown there
+		
+2. VIA ROUTER OR ACCESS POINTS :
+
+		
+		arp -a -> command will list all the connected device that this particular host found 
+		
+		http://<Address of default gateway>  -> will redirect to the website of the router where upon appropriate credentials , connected devices can be found.

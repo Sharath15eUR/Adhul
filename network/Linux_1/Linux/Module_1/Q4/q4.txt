@@ -1,0 +1,26 @@
+4. Use ps command with options 
+
+annamalai@Annamalai:~/Linux/Module_1/Q3$ cd ..
+annamalai@Annamalai:~/Linux/Module_1$ ls
+Q1  Q2  Q3
+annamalai@Annamalai:~/Linux/Module_1$ mkdir Q4
+annamalai@Annamalai:~/Linux/Module_1$ ls
+Q1  Q2  Q3  Q4
+annamalai@Annamalai:~/Linux/Module_1$ cd Q4
+annamalai@Annamalai:~/Linux/Module_1/Q4$ ls
+annamalai@Annamalai:~/Linux/Module_1/Q4$ touch q4.txt
+annamalai@Annamalai:~/Linux/Module_1/Q4$ ps aux
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.1  23304 14016 ?        Ss   09:51   0:02 /sbin/init splash
+root           2  0.0  0.0      0     0 ?        S    09:51   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        S    09:51   0:00 [pool_workqueue_release]
+root           4  0.0  0.0      0     0 ?        I<   09:51   0:00 [kworker/R-rcu_g]
+root           5  0.0  0.0      0     0 ?        I<   09:51   0:00 [kworker/R-rcu_p]
+root           6  0.0  0.0      0     0 ?        I<   09:51   0:00 [kworker/R-slub_]
+root           7  0.0  0.0      0     0 ?        I<   09:51   0:00 [kworker/R-netns]
+root           9  0.0  0.0      0     0 ?        I<   09:51   0:00 [kworker/0:0H-events_highpri]
+root          12  0.0  0.0      0     0 ?        I<   09:51   0:00 [kworker/R-mm_pe]
+root          13  0.0  0.0      0     0 ?        I    09:51   0:00 [rcu_tasks_kthread]
+root          14  0.0  0.0      0     0 ?        I    09:51   0:00 [rcu_tasks_rude_kthread]
+root          15  0.0  0.0      0     0 ?        I    09:51   0:00 [rcu_tasks_trace_kthread]
+

@@ -1,0 +1,18 @@
+5. Use appropriate networking tools to list the gateways in sorted manner
+
+annamalai@Annamalai:~/Linux/Module_2/Q5$ netstat -r
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
+default         _gateway        0.0.0.0         UG        0 0          0 wlp0s20f3
+10.11.128.0     0.0.0.0         255.255.128.0   U         0 0          0 wlp0s20f3
+annamalai@Annamalai:~/Linux/Module_2/Q5$ route -n
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+0.0.0.0         10.11.128.1     0.0.0.0         UG    600    0        0 wlp0s20f3
+10.11.128.0     0.0.0.0         255.255.128.0   U     600    0        0 wlp0s20f3
+annamalai@Annamalai:~/Linux/Module_2/Q5$ route -n | awk 'NR > 2 {print $2}'
+10.11.128.1
+0.0.0.0
+annamalai@Annamalai:~/Linux/Module_2/Q5$ route -n | awk 'NR > 2 {print $2}' | sort
+0.0.0.0
+10.11.128.1

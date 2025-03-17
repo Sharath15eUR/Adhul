@@ -1,0 +1,9 @@
+1. Fetch the following parameters from input file and store it in oytput file
+
+Params expected to be fetched from input.txt file : "frame.time", "wlan.fc.type", "wlan.fc.subtype"
+Sample output expected in output.txt:
+
+annamalai@Annamalai:~/Linux/Module_4$ ./script.sh 
+Usage: ./script.sh <source_directory>
+annamalai@Annamalai:~/Linux/Module_4$ ./script.sh input.txt
+annamalai@Annamalai:~/Linux/Module_4$ 

@@ -1,0 +1,54 @@
+3. Use the appropriate commands to search for the lines containing the keyword "ERROR" and leave if it has "DEBUG" and output the result to another file
+
+annamalai@Annamalai:~/Linux/Module_2/Q3$ cat > logfile.txt
+DEBUG: Starting the application initialization.
+ERROR: Unable to connect to the database.
+INFO: User 'admin' logged in successfully.
+DEBUG: Fetching configuration settings from the server.
+ERROR: DEBUG - Configuration settings could not be applied.
+INFO: Scheduled job 'backup' completed successfully.
+DEBUG: Connection to server timed out. Retrying...
+ERROR: Failed to fetch data from API endpoint '/users'.
+INFO: Maintenance mode activated.
+ERROR: DEBUG - Query execution failed due to a syntax error.
+DEBUG: Reloading application modules.
+ERROR: Missing required parameter in the request.
+INFO: Shutting down the system gracefully.
+DEBUG: Closing unused network connections.
+ERROR: DEBUG - Unexpected server response received.^C
+annamalai@Annamalai:~/Linux/Module_2/Q3$ awk --help
+Usage: mawk [Options] [Program] [file ...]
+
+Program:
+    The -f option value is the name of a file containing program text.
+    If no -f option is given, a "--" ends option processing; the following
+    parameters are the program text.
+
+Options:
+    -f program-file  Program  text is read from file instead of from the
+                     command-line.  Multiple -f options are accepted.
+    -F value         sets the field separator, FS, to value.
+    -v var=value     assigns value to program variable var.
+    --               unambiguous end of options.
+
+    Implementation-specific options are prefixed with "-W".  They can be
+    abbreviated:
+
+    -W version       show version information and exit.
+    -W compat        pre-POSIX 2001.
+    -W dump          show assembler-like listing of program and exit.
+    -W help          show this message and exit.
+    -W interactive   set unbuffered output, line-buffered input.
+    -W exec file     use file as program as well as last option.
+    -W posix         stricter POSIX checking.
+    -W random=number set initial random seed.
+    -W sprintf=number adjust size of sprintf buffer.
+    -W usage         show this message and exit.
+annamalai@Annamalai:~/Linux/Module_2/Q3$ info awk
+annamalai@Annamalai:~/Linux/Module_2/Q3$ awk -F: '$0 ~/^ERROR/ && $2 !~/^ DEBUG/ {print $0}' logfile.txt > filtered_log.txt
+annamalai@Annamalai:~/Linux/Module_2/Q3$ ls
+filtered_log.txt  logfile.txt
+annamalai@Annamalai:~/Linux/Module_2/Q3$ cat filtered_log.txt 
+ERROR: Unable to connect to the database.
+ERROR: Failed to fetch data from API endpoint '/users'.
+ERROR: Missing required parameter in the request.

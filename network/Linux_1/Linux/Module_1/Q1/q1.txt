@@ -1,0 +1,17 @@
+
+1. Create a file and add executable permission to all user (user, group and others)
+
+annamalai@Annamalai:~$ cd Linux/Module_1/
+annamalai@Annamalai:~/Linux/Module_1$ ls
+annamalai@Annamalai:~/Linux/Module_1$ touch q1.txt
+annamalai@Annamalai:~/Linux/Module_1$ ls
+q1.txt
+annamalai@Annamalai:~/Linux/Module_1$ ls -l
+total 0
+-rw-rw-r-- 1 annamalai annamalai 0 Jan 28 10:16 q1.txt
+annamalai@Annamalai:~/Linux/Module_1$ chmod u+x,g+x,o+x q1.txt
+annamalai@Annamalai:~/Linux/Module_1$ ls -l
+total 0
+-rwxrwxr-x 1 annamalai annamalai 0 Jan 28 10:16 q1.txt
+annamalai@Annamalai:~/Linux/Module_1$ 
+

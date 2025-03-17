@@ -1,0 +1,40 @@
+1. Create a Bash script 'file_analyzer.sh' to demonstrate the following concepts : 
+ 	1. Recursive Function
+ 	2. Redirection and error handling
+ 	3. Here document and Here String
+ 	4. Special parameters
+ 	5. Regular expressions
+ 	6. Command line arguments using getopts
+
+annamalai@Annamalai:~/Linux/Module_5/Q1$ ls
+errors.log        Sample_Q1  Sample_Q3  Sample_Q5
+file_analyzer.sh  Sample_Q2  Sample_Q4
+annamalai@Annamalai:~/Linux/Module_5/Q1$ ./file_analyzer.sh --help
+Usage: ./file_analyzer.sh [options]
+Options:
+  -d <directory>  Search for a keyword recursively in a directory.
+  -f <file>       Search for a keyword in a specific file.
+  -k <keyword>    Keyword to search for.
+  --help          Display this help menu.
+
+Example:
+  ./file_analyzer.sh -d logs -k error
+  ./file_analyzer.sh -f script.sh -k TODO
+annamalai@Annamalai:~/Linux/Module_5/Q1$ ./file_analyzer.sh -f $PWD/Sample_Q2/config.txt -k localhost
+/home/annamalai/Linux/Module_5/Q1/Sample_Q2/config.txt:2:File server = localhost
+/home/annamalai/Linux/Module_5/Q1/Sample_Q2/config.txt:3:database_host = localhost
+/home/annamalai/Linux/Module_5/Q1/Sample_Q2/config.txt:5:api_url = http://localhost:8080
+/home/annamalai/Linux/Module_5/Q1/Sample_Q2/config.txt:6:log_path = /var/log/localhost
+annamalai@Annamalai:~/Linux/Module_5/Q1$ ./file_analyzer.sh -d $PWD -k localhost
+/home/annamalai/Linux/Module_5/Q1/Sample_Q2/config.txt:2:File server = localhost
+/home/annamalai/Linux/Module_5/Q1/Sample_Q2/config.txt:3:database_host = localhost
+/home/annamalai/Linux/Module_5/Q1/Sample_Q2/config.txt:5:api_url = http://localhost:8080
+/home/annamalai/Linux/Module_5/Q1/Sample_Q2/config.txt:6:log_path = /var/log/localhost
+/home/annamalai/Linux/Module_5/Q1/Sample_Q2/q2.txt:2:2. Replace all occurences of localhost in the config.txt file and replace it with 127.0.0.1 and update this change in the updated_config.txt 
+/home/annamalai/Linux/Module_5/Q1/Sample_Q2/q2.txt:7:File server = localhost
+/home/annamalai/Linux/Module_5/Q1/Sample_Q2/q2.txt:8:database_host = localhost
+/home/annamalai/Linux/Module_5/Q1/Sample_Q2/q2.txt:10:api_url = http://localhost:8080
+/home/annamalai/Linux/Module_5/Q1/Sample_Q2/q2.txt:11:log_path = /var/log/localhost
+/home/annamalai/Linux/Module_5/Q1/Sample_Q2/q2.txt:16:annamalai@Annamalai:~/Linux/Module_2/Q2$ sed 's/localhost/127.0.0.1/g' config.txt > updated_config.txt
+annamalai@Annamalai:~/Linux/Module_5/Q1$ 
+

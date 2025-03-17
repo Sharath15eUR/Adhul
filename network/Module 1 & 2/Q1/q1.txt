@@ -1,0 +1,111 @@
+
+a) CP
+
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~$ ls
+Desktop  Documents  Downloads  Module1  Music  Pictures  Public  snap  Templates  Videos
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~$ cd Module1
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/Module1$ ls
+dir1  item2.txt  items1.txt  items2.txt  items3.txt  item.txt  q1.txt  q2.txt  q3.txt  q4.txt  q5.txt  README.md  totalitems.txt
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/Module1$ cd ..
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~$ mkdir network
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~$ ls
+Desktop  Documents  Downloads  Module1  Music  network  Pictures  Public  snap  Templates  Videos
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~$ cd -p $PWD/Module1 $PWD/network
+bash: cd: -p: invalid option
+cd: usage: cd [-L|[-P [-e]] [-@]] [dir]
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~$ cp -r $PWD/Module1 $PWD/network
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~$ cd Module1
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/Module1$ ls
+dir1  item2.txt  items1.txt  items2.txt  items3.txt  item.txt  q1.txt  q2.txt  q3.txt  q4.txt  q5.txt  README.md  totalitems.txt
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/Module1$ cd..
+cd..: command not found
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/Module1$ cd ..
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~$ cd network
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/network$ ls
+Module1
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/network$ cd Module1/
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/network/Module1$ ls
+dir1  item2.txt  items1.txt  items2.txt  items3.txt  item.txt  q1.txt  q2.txt  q3.txt  q4.txt  q5.txt  README.md  totalitems.txt
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/network/Module1$ ^C
+
+
+b)SCP
+
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~$ ls
+Desktop  Documents  Downloads  Module1  Music  network  Pictures  Public  snap  Templates  Videos
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~$ cd Module1
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/Module1$ ls
+dir1  item2.txt  items1.txt  items2.txt  items3.txt  item.txt  q1.txt  q2.txt  q3.txt  q4.txt  q5.txt  README.md  totalitems.txt
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/Module1$ scp -r $PWD annamalai@10.11.238.118:/home/annamalai/Networking
+ssh: connect to host 10.11.238.118 port 22: Connection refused
+scp: Connection closed
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/Module1$ scp -r $PWD annamalai@10.11.238.118:/home/annamalai/Networking
+ssh: connect to host 10.11.238.118 port 22: Connection refused
+scp: Connection closed
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/Module1$ ping 10.11.232.253
+PING 10.11.232.253 (10.11.232.253) 56(84) bytes of data.
+64 bytes from 10.11.232.253: icmp_seq=1 ttl=64 time=0.043 ms
+64 bytes from 10.11.232.253: icmp_seq=2 ttl=64 time=0.056 ms
+64 bytes from 10.11.232.253: icmp_seq=3 ttl=64 time=0.056 ms
+64 bytes from 10.11.232.253: icmp_seq=4 ttl=64 time=0.055 ms
+64 bytes from 10.11.232.253: icmp_seq=5 ttl=64 time=0.064 ms
+64 bytes from 10.11.232.253: icmp_seq=6 ttl=64 time=0.056 ms
+64 bytes from 10.11.232.253: icmp_seq=7 ttl=64 time=0.054 ms
+^C
+--- 10.11.232.253 ping statistics ---
+7 packets transmitted, 7 received, 0% packet loss, time 6180ms
+rtt min/avg/max/mdev = 0.043/0.054/0.064/0.005 ms
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/Module1$ scp -r $PWD annamalai@10.11.238.118:/home/annamalai/Networking
+ssh: connect to host 10.11.238.118 port 22: Connection refused
+scp: Connection closed
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~/Module1$ scp -r $PWD annamalai@10.11.238.118:/home/annamalai/Networking
+The authenticity of host '10.11.238.118 (10.11.238.118)' can't be established.
+ED25519 key fingerprint is SHA256:JFvheH84a9Al/C/e5T7fRDH5n6Tz0AmviOqW80zvXwY.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '10.11.238.118' (ED25519) to the list of known hosts.
+annamalai@10.11.238.118's password: 
+q5.txt                                                                                                                                                      100% 1814   393.2KB/s   00:00    
+README.md                                                                                                                                                   100%   60    12.8KB/s   00:00    
+items1.txt                                                                                                                                                  100%    0     0.0KB/s   00:00    
+q4.txt                                                                                                                                                      100%   30KB   1.6MB/s   00:00    
+pack-ec33cce5a5f3f77d371b9a16112b95ffd900c9b5.rev                                                                                                           100%   64    12.7KB/s   00:00    
+pack-ec33cce5a5f3f77d371b9a16112b95ffd900c9b5.pack                                                                                                          100%  924   215.1KB/s   00:00    
+pack-ec33cce5a5f3f77d371b9a16112b95ffd900c9b5.idx                                                                                                           100% 1156   264.0KB/s   00:00    
+index                                                                                                                                                       100%  137    31.0KB/s   00:00    
+HEAD                                                                                                                                                        100%   21     4.4KB/s   00:00    
+main                                                                                                                                                        100%   41     9.3KB/s   00:00    
+HEAD                                                                                                                                                        100%   30     6.8KB/s   00:00    
+description                                                                                                                                                 100%   73    21.7KB/s   00:00    
+applypatch-msg.sample                                                                                                                                       100%  478   131.7KB/s   00:00    
+pre-commit.sample                                                                                                                                           100% 1643   370.6KB/s   00:00    
+pre-merge-commit.sample                                                                                                                                     100%  416    94.4KB/s   00:00    
+prepare-commit-msg.sample                                                                                                                                   100% 1492   318.8KB/s   00:00    
+pre-applypatch.sample                                                                                                                                       100%  424    78.7KB/s   00:00    
+pre-rebase.sample                                                                                                                                           100% 4898   806.2KB/s   00:00    
+fsmonitor-watchman.sample                                                                                                                                   100% 4726   856.7KB/s   00:00    
+update.sample                                                                                                                                               100% 3650   174.7KB/s   00:00    
+push-to-checkout.sample                                                                                                                                     100% 2783   508.8KB/s   00:00    
+sendemail-validate.sample                                                                                                                                   100% 2308   421.8KB/s   00:00    
+pre-push.sample                                                                                                                                             100% 1374   249.3KB/s   00:00    
+post-update.sample                                                                                                                                          100%  189    34.4KB/s   00:00    
+pre-receive.sample                                                                                                                                          100%  544   116.3KB/s   00:00    
+commit-msg.sample                                                                                                                                           100%  896   156.7KB/s   00:00    
+exclude                                                                                                                                                     100%  240    54.6KB/s   00:00    
+packed-refs                                                                                                                                                 100%  112    29.7KB/s   00:00    
+HEAD                                                                                                                                                        100%  215    39.6KB/s   00:00    
+main                                                                                                                                                        100%  215    39.5KB/s   00:00    
+HEAD                                                                                                                                                        100%  215    43.7KB/s   00:00    
+config                                                                                                                                                      100%  261    62.9KB/s   00:00    
+item3.txt                                                                                                                                                   100%    0     0.0KB/s   00:00    
+q3.txt                                                                                                                                                      100%  892   209.3KB/s   00:00    
+item3.txt                                                                                                                                                   100%    0     0.0KB/s   00:00    
+item.txt                                                                                                                                                    100%    0     0.0KB/s   00:00    
+q1.txt                                                                                                                                                      100%  592   129.3KB/s   00:00    
+q3.txt                                                                                                                                                      100%  892   191.8KB/s   00:00    
+items2.txt                                                                                                                                                  100%    0     0.0KB/s   00:00    
+q2.txt                                                                                                                                                      100%  786   150.7KB/s   00:00    
+item2.txt                                                                                                                                                   100%    0     0.0KB/s   00:00    
+totalitems.txt                                                                                                                                              100%  118    20.8KB/s   00:00    
+items3.txt                                                                                                                                                  100%    0     0.0KB/s   00:00    
+

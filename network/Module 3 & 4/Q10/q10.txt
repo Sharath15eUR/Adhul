@@ -1,0 +1,31 @@
+Q10.
+
+        Connecting Two Linux Machines via a Virtual Switch
+
+1.Create Virtual Interfaces:
+        sudo ip link add <interface1> type veth peer name <interface2>
+
+2.Verify Interfaces:
+        ip link show
+
+3.Create a Virtual Switch (Bridge):
+        sudo ip link add name <bridge_name> type bridge
+
+4.Attach Virtual Interfaces to the Bridge:
+        sudo ip link set <interface> master <bridge_name>
+
+5.Enable the Bridge and Interfaces:
+        sudo ip link set <interface/bridge> up
+
+6.Assign IP Addresses:
+        sudo ip addr add <IP_address> dev <interface>
+
+7.Test Connectivity with Ping:
+        ping <destination_IP> -I <source_interface>
+
+8.Check the MAC Address Table of the Bridge:
+        bridge fdb show
+
+9.Remove Configuration and Clean Up Resources:
+        sudo ip link set <interface> nomaster
+        sudo ip link delete <bridge_name> type bridge

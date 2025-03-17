@@ -1,0 +1,77 @@
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~$ sudo apt update
+[sudo] password for adhul: 
+Hit:1 http://archive.ubuntu.com/ubuntu noble InRelease                     
+Hit:2 http://security.ubuntu.com/ubuntu noble-security InRelease           
+Hit:3 http://archive.ubuntu.com/ubuntu noble-updates InRelease
+Hit:4 http://archive.ubuntu.com/ubuntu noble-backports InRelease
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+1 package can be upgraded. Run 'apt list --upgradable' to see it.
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~$                
+sudo apt install net-tools wireless-tools -y
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+net-tools is already the newest version (2.10-0.1ubuntu4).
+wireless-tools is already the newest version (30~pre9-16.1ubuntu2).
+wireless-tools set to manually installed.
+The following packages were automatically installed and are no longer required:
+  libllvm17t64 python3-netifaces tcpd
+Use 'sudo apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~$ sudo apt install net-tools wireless-tools -y
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+net-tools is already the newest version (2.10-0.1ubuntu4).
+wireless-tools is already the newest version (30~pre9-16.1ubuntu2).
+The following packages were automatically installed and are no longer required:
+  libllvm17t64 python3-netifaces tcpd
+Use 'sudo apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~$ ifconfig
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 10904  bytes 1590248 (1.5 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 10904  bytes 1590248 (1.5 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlp2s0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.11.232.253  netmask 255.255.128.0  broadcast 10.11.255.255
+        inet6 fe80::6381:e705:3ad5:7c3  prefixlen 64  scopeid 0x20<link>
+        ether 50:5a:65:c8:b5:d3  txqueuelen 1000  (Ethernet)
+        RX packets 847550  bytes 1244562123 (1.2 GB)
+        RX errors 0  dropped 17  overruns 0  frame 0
+        TX packets 205193  bytes 23223492 (23.2 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~$ ifconfig wlp2s0
+wlp2s0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.11.232.253  netmask 255.255.128.0  broadcast 10.11.255.255
+        inet6 fe80::6381:e705:3ad5:7c3  prefixlen 64  scopeid 0x20<link>
+        ether 50:5a:65:c8:b5:d3  txqueuelen 1000  (Ethernet)
+        RX packets 847711  bytes 1244599172 (1.2 GB)
+        RX errors 0  dropped 19  overruns 0  frame 0
+        TX packets 205344  bytes 23279160 (23.2 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~$ iwconfig
+lo        no wireless extensions.
+
+wlp2s0    IEEE 802.11  ESSID:"TCE"  
+          Mode:Managed  Frequency:5.745 GHz  Access Point: 70:F3:5A:9C:C7:AF   
+          Bit Rate=78 Mb/s   Tx-Power=3 dBm   
+          Retry short limit:7   RTS thr:off   Fragment thr:off
+          Power Management:on
+          Link Quality=59/70  Signal level=-51 dBm  
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:3  Invalid misc:0   Missed beacon:0
+	
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~$ iwconfig wlp2s0 | grep -i "bit rate"
+          Bit Rate=13 Mb/s   Tx-Power=3 dBm   
+

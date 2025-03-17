@@ -1,0 +1,4 @@
+total 0
+-rw-rw-r-- 1 annamalai annamalai 0 Jan 28 11:06 1.txt
+-rw-rw-r-- 1 annamalai annamalai 0 Jan 28 11:05 2.txt
+-rw-rw-r-- 1 annamalai annamalai 0 Jan 28 11:05 3.txt

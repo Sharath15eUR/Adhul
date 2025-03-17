@@ -1,0 +1,27 @@
+1. Use the appropriate command to list all files larger than 1MB in the current directory and save the output to a file
+
+annamalai@Annamalai:~/Downloads$ ls -l
+total 108564
+drwxr-xr-x 4 annamalai annamalai      4096 Jan 25 02:15  caa_x64
+-rw-rw-r-- 1 annamalai annamalai   1306184 Jan 24 18:19 'caa_x64(1).tar.gz'
+-rw-rw-r-- 1 annamalai annamalai   1314766 Jan 24 18:20  caa_x64.tar.gz
+-rw-rw-r-- 1 annamalai annamalai 108315656 Oct  6 13:17  code_1.94.0-1727878498_amd64.deb
+drwxrwxr-x 2 annamalai annamalai      4096 Jan 21 23:12  learning
+-rw-rw-r-- 1 annamalai annamalai     61216 Sep  8 20:21 'TCE_Accenture Batch Details.xlsx'
+-rw-rw-r-- 1 annamalai annamalai     17985 Sep 13 14:03 'TCE_TAFE Students List.xlsx'
+drwx------ 4 annamalai annamalai      4096 Jan 23 00:05  thunderbird.tmp
+-rw-rw-r-- 1 annamalai annamalai      4202 Oct 16 23:57 'WD_2311_map(1).py'
+-rw-rw-r-- 1 annamalai annamalai      4202 Oct 16 23:21  WD_2311_map.py
+-rw-rw-r-- 1 annamalai annamalai    111803 Oct 16 22:15  WD_3598_task_1a.zip
+annamalai@Annamalai:~/Downloads$ ls -l | awk 'NR > 1 && $5 > 1048576 {print $9}'> ~/home/annamalai/Linux/Module_2/Q1/q1.txt
+bash: /home/annamalai/home/annamalai/Linux/Module_2/Q1/q1.txt: No such file or directory
+annamalai@Annamalai:~/Downloads$ ls -l | awk 'NR > 1 && $5 > 1048576 {print $9}'> ~/Linux/Module_2/Q1/q1.txt
+annamalai@Annamalai:~/Downloads$ cat ~/home/annamalai/Linux/Module_2/Q1/1.txt
+cat: /home/annamalai/home/annamalai/Linux/Module_2/Q1/1.txt: No such file or directory
+annamalai@Annamalai:~/Downloads$ cat ~/home/annamalai/Linux/Module_2/Q1/q1.txt
+cat: /home/annamalai/home/annamalai/Linux/Module_2/Q1/q1.txt: No such file or directory
+annamalai@Annamalai:~/Downloads$ cat ~/Linux/Module_2/Q1/q1.txt
+caa_x64(1).tar.gz
+caa_x64.tar.gz
+code_1.94.0-1727878498_amd64.deb
+annamalai@Annamalai:~/Downloads$ 

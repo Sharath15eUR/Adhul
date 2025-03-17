@@ -1,0 +1,127 @@
+Q1.
+
+IN terminal:
+
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~$ ping google.com
+PING google.com (142.250.195.142) 56(84) bytes of data.
+64 bytes from maa03s40-in-f14.1e100.net (142.250.195.142): icmp_seq=1 ttl=58 time=16.5 ms
+64 bytes from maa03s40-in-f14.1e100.net (142.250.195.142): icmp_seq=2 ttl=58 time=21.7 ms
+64 bytes from maa03s40-in-f14.1e100.net (142.250.195.142): icmp_seq=3 ttl=58 time=16.0 ms
+64 bytes from maa03s40-in-f14.1e100.net (142.250.195.142): icmp_seq=4 ttl=58 time=16.4 ms
+^C
+--- google.com ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3002ms
+rtt min/avg/max/mdev = 15.983/17.637/21.671/2.336 ms
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~$ nslookup www.google.com
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Non-authoritative answer:
+Name:	www.google.com
+Address: 142.250.196.164
+Name:	www.google.com
+Address: 2404:6800:4007:82c::2004
+
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~$ ping www.facebook.com
+PING star-mini.c10r.facebook.com (157.240.192.35) 56(84) bytes of data.
+64 bytes from edge-star-mini-shv-02-maa2.facebook.com (157.240.192.35): icmp_seq=1 ttl=56 time=13.5 ms
+64 bytes from edge-star-mini-shv-02-maa2.facebook.com (157.240.192.35): icmp_seq=2 ttl=56 time=14.0 ms
+64 bytes from edge-star-mini-shv-02-maa2.facebook.com (157.240.192.35): icmp_seq=3 ttl=56 time=13.5 ms
+64 bytes from edge-star-mini-shv-02-maa2.facebook.com (157.240.192.35): icmp_seq=4 ttl=56 time=16.5 ms
+^C
+--- star-mini.c10r.facebook.com ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3003ms
+rtt min/avg/max/mdev = 13.486/14.381/16.511/1.245 ms
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~$ nslookup www.facebook.com
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Non-authoritative answer:
+www.facebook.com	canonical name = star-mini.c10r.facebook.com.
+Name:	star-mini.c10r.facebook.com
+Address: 157.240.192.35
+Name:	star-mini.c10r.facebook.com
+Address: 2a03:2880:f137:182:face:b00c:0:25de
+
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~$ ping www.amazon.com
+PING d3ag4hukkh62yn.cloudfront.net (18.67.156.60) 56(84) bytes of data.
+64 bytes from server-18-67-156-60.maa51.r.cloudfront.net (18.67.156.60): icmp_seq=1 ttl=248 time=12.6 ms
+64 bytes from server-18-67-156-60.maa51.r.cloudfront.net (18.67.156.60): icmp_seq=2 ttl=248 time=12.0 ms
+64 bytes from server-18-67-156-60.maa51.r.cloudfront.net (18.67.156.60): icmp_seq=3 ttl=248 time=13.6 ms
+64 bytes from server-18-67-156-60.maa51.r.cloudfront.net (18.67.156.60): icmp_seq=4 ttl=248 time=203 ms
+^C
+--- d3ag4hukkh62yn.cloudfront.net ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3003ms
+rtt min/avg/max/mdev = 12.013/60.421/203.455/82.582 ms
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~$ nslookup www.amazon.com
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Non-authoritative answer:
+www.amazon.com	canonical name = tp.47cf2c8c9-frontier.amazon.com.
+tp.47cf2c8c9-frontier.amazon.com	canonical name = d3ag4hukkh62yn.cloudfront.net.
+Name:	d3ag4hukkh62yn.cloudfront.net
+Address: 18.67.156.60
+Name:	d3ag4hukkh62yn.cloudfront.net
+Address: 2600:9000:2241:5e00:7:49a5:5fd4:b121
+Name:	d3ag4hukkh62yn.cloudfront.net
+Address: 2600:9000:2241:ea00:7:49a5:5fd4:b121
+Name:	d3ag4hukkh62yn.cloudfront.net
+Address: 2600:9000:2241:c200:7:49a5:5fd4:b121
+Name:	d3ag4hukkh62yn.cloudfront.net
+Address: 2600:9000:2241:1000:7:49a5:5fd4:b121
+Name:	d3ag4hukkh62yn.cloudfront.net
+Address: 2600:9000:2241:a200:7:49a5:5fd4:b121
+Name:	d3ag4hukkh62yn.cloudfront.net
+Address: 2600:9000:2241:9200:7:49a5:5fd4:b121
+Name:	d3ag4hukkh62yn.cloudfront.net
+Address: 2600:9000:2241:1e00:7:49a5:5fd4:b121
+Name:	d3ag4hukkh62yn.cloudfront.net
+Address: 2600:9000:2241:3200:7:49a5:5fd4:b121
+
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~$ ping www.github.com
+PING github.com (20.207.73.82) 56(84) bytes of data.
+64 bytes from 20.207.73.82: icmp_seq=1 ttl=114 time=27.9 ms
+64 bytes from 20.207.73.82: icmp_seq=2 ttl=114 time=47.6 ms
+64 bytes from 20.207.73.82: icmp_seq=3 ttl=114 time=28.0 ms
+64 bytes from 20.207.73.82: icmp_seq=4 ttl=114 time=159 ms
+^C
+--- github.com ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3004ms
+rtt min/avg/max/mdev = 27.929/65.680/159.254/54.614 ms
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~$ nslookup www.github.com
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Non-authoritative answer:
+www.github.com	canonical name = github.com.
+Name:	github.com
+Address: 20.207.73.82
+
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~$ ping www.cisco.com
+PING e2867.dsca.akamaiedge.net (23.217.154.126) 56(84) bytes of data.
+64 bytes from a23-217-154-126.deploy.static.akamaitechnologies.com (23.217.154.126): icmp_seq=1 ttl=56 time=87.8 ms
+64 bytes from a23-217-154-126.deploy.static.akamaitechnologies.com (23.217.154.126): icmp_seq=2 ttl=56 time=80.4 ms
+64 bytes from a23-217-154-126.deploy.static.akamaitechnologies.com (23.217.154.126): icmp_seq=3 ttl=56 time=84.7 ms
+64 bytes from a23-217-154-126.deploy.static.akamaitechnologies.com (23.217.154.126): icmp_seq=4 ttl=56 time=81.3 ms
+^C
+--- e2867.dsca.akamaiedge.net ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3003ms
+rtt min/avg/max/mdev = 80.380/83.541/87.766/2.933 ms
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~$ nslookup www.cisco.com
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Non-authoritative answer:
+www.cisco.com	canonical name = www.cisco.com.akadns.net.
+www.cisco.com.akadns.net	canonical name = wwwds.cisco.com.edgekey.net.
+wwwds.cisco.com.edgekey.net	canonical name = wwwds.cisco.com.edgekey.net.globalredir.akadns.net.
+wwwds.cisco.com.edgekey.net.globalredir.akadns.net	canonical name = e2867.dsca.akamaiedge.net.
+Name:	e2867.dsca.akamaiedge.net
+Address: 23.217.154.126
+Name:	e2867.dsca.akamaiedge.net
+Address: 2600:140f:6600:284::b33
+Name:	e2867.dsca.akamaiedge.net
+Address: 2600:140f:6600:289::b33
+
+

@@ -1,0 +1,32 @@
+Q3.
+
+Traceroute:
+
+traceroute (Linux) is a network diagnostic tool used to track the path that packets take from a source device (your computer) to a destination (website or server).It helps identify network latency, routing issues, and network congestion by displaying the intermediate routers (hops) that a packet travels through.
+Traceroute is a powerful tool for diagnosing network issues, but its results should be interpreted carefully, as some routers may filter or prioritize different types of traffic.
+
+In terminal:
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~$ traceroute google.com
+traceroute to google.com (142.250.195.142), 64 hops max
+  1   10.11.128.1  5.334ms  2.050ms  2.424ms 
+  2   117.232.96.193  4.186ms  3.232ms  3.675ms 
+  3   172.24.67.226  3.564ms  2.055ms  3.129ms 
+  4   *  *  * 
+  5   *  *  * 
+  6   142.250.160.26  14.622ms  15.944ms  15.951ms 
+  7   *  *  * 
+  8   142.251.55.204  12.449ms  162.504ms  12.246ms 
+  9   142.251.55.61  10.728ms  11.084ms  10.652ms 
+ 10   142.250.195.142  12.293ms  14.442ms  12.437ms 
+adhul@adhul-Vivobook-ASUSLaptop-M6500QF-M6500QF:~$ traceroute -I google.com
+traceroute to google.com (142.250.195.142), 64 hops max
+  1   10.11.128.1  7.155ms  1.053ms  3.418ms 
+  2   117.232.96.193  10.619ms  11.938ms  12.312ms 
+  3   172.24.67.226  32.823ms  16.329ms  7.379ms 
+  4   *  *  * 
+  5   *  *  * 
+  6   142.250.160.26  71.387ms  13.702ms  14.054ms 
+  7   216.239.43.135  13.899ms  13.883ms  13.879ms 
+  8   142.251.55.61  12.805ms  152.882ms  13.658ms 
+  9   142.250.195.142  13.798ms  19.795ms  14.214ms 
+

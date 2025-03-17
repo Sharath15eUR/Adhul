@@ -1,0 +1,24 @@
+3. Create a file and add a softlink to the file in different directory
+
+Answer
+Q3->dir2->q3.txt
+Q3->dir2, q3shlink.txt
+
+annamalai@Annamalai:~/Linux/Module_1$ ls
+Q1  Q2  Q3
+annamalai@Annamalai:~/Linux/Module_1$ cd Q3
+annamalai@Annamalai:~/Linux/Module_1/Q3$ ls
+dir2
+annamalai@Annamalai:~/Linux/Module_1/Q3$ cd dir2
+annamalai@Annamalai:~/Linux/Module_1/Q3/dir2$ ls
+q3.txt
+annamalai@Annamalai:~/Linux/Module_1/Q3/dir2$ ln -s $PWD/q3.txt ~/Linux/Module_1/Q3/shlink.txt
+annamalai@Annamalai:~/Linux/Module_1/Q3/dir2$ ls
+q3.txt
+annamalai@Annamalai:~/Linux/Module_1/Q3/dir2$ ls -i
+920153 q3.txt
+annamalai@Annamalai:~/Linux/Module_1/Q3/dir2$ cd ..
+annamalai@Annamalai:~/Linux/Module_1/Q3$ ls -i
+920141 dir2  917883 shlink.txt
+annamalai@Annamalai:~/Linux/Module_1/Q3$ 
+

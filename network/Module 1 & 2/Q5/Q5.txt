@@ -1,0 +1,18 @@
+
+Q5.
+
+When two devices in the same network are assigned the same IP address, it leads to an IP address conflict. This can cause network connectivity issues, malfunctions, or even complete failure of communication for the affected devices.
+
+Effects of Duplicate IPs:
+
+    Network Disruptions – Both devices may become unreachable due to IP conflict.
+    Intermittent Connectivity Issues – The network may randomly switch between devices with the same IP.
+    Loss of Communication – Devices might fail to communicate with each other or the internet.
+    Security Risks – Attackers can use duplicate IPs for spoofing or intercepting traffic.
+    
+How resolve the problem:
+1.Use arp -a to check for duplicate MAC addresses with the same IP.
+2.Check DHCP logs to identify conflicting IP addresses.
+3.Use IP conflict detection tools or network monitoring software.
+4.Manually change the IP address of the conflicting device.
+5.Ensure DHCP servers assign unique IPs using proper DHCP configurations.
